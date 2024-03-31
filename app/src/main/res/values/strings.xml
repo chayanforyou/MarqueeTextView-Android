@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MarqueeTextView</string>
+    <string name="sample_text">This library is awesome isn\'t it? It\'s exactly what you need!</string>
+</resources>

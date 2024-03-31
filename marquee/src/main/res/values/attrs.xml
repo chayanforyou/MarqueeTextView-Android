@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MarqueeTextView">
+        <attr name="marqueeText" format="string" />
+        <attr name="marqueeTextColor" format="color" />
+        <attr name="marqueeFadeToColor" format="color" />
+        <attr name="marqueeTextSize" format="dimension" />
+        <attr name="marqueeIsLooping" format="boolean" />
+        <attr name="marqueeLoops" format="integer" />
+        <attr name="marqueeStartWaitTicks" format="integer" />
+        <attr name="marqueeEndWaitTicks" format="integer" />
+        <attr name="marqueeFontFamily" format="reference" />
+    </declare-styleable>
+</resources>
