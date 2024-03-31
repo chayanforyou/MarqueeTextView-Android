@@ -23,7 +23,7 @@
         app:marqueeLoops="0"
         app:marqueeStartWaitTicks="50"
         app:marqueeText="@string/sample_text"
-        app:marqueeTextColor="@color/black"
+        app:marqueeTextColor="?android:colorAccent"
         app:marqueeTextSize="18sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
