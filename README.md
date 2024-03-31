@@ -13,7 +13,7 @@ Based on open source lib: https://github.com/shachar-oren/android-rtlmarqueeview
 Add the dependency:
 ```groovy
 dependencies {
-    implementation 'io.github.chayanforyou:slider:1.0.0'
+    implementation 'io.github.chayanforyou:marquee:1.0.0'
 }
 ```
 ## Usage
