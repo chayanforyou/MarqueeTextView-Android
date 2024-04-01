@@ -6,11 +6,12 @@ Based on open source lib: https://github.com/shachar-oren/android-rtlmarqueeview
 
 ## Preview
 
-<img src="https://github.com/shachar-oren/android-rtlmarqueeview/blob/master/example.gif" alt="demo" height="50px"/>
+<img src="/app/src/main/res/drawable/preview_dark.gif" alt="preview_dark" width="50%"/>
 
 ## Integration
 
 Add the dependency:
+
 ```groovy
 dependencies {
     implementation 'io.github.chayanforyou:marquee:1.0.0'
@@ -55,21 +56,32 @@ Example usage in XML:
 Layout direction is checked internally. To manually update it, call `updateRtl()`.
 
 ## Public methods
+
 ```java
 void setText(String text)
 String getText()
+
 void setTextColor(int color)
 int getTextColor()
+
 void setTextSize(float size)
 float getTextSize()
+
+void setTypeface()
+Typeface getTypeface()
+
 void setFadeToColor(int color)
 int getFadeToColor()
+
 void setLooping(boolean looping)
 boolean getLooping()
+
 void setLoops(int loops)
 int getLoops()
+
 void setStartWaitTicks(int ticks)
 int getStartWaitTicks()
+
 void setEndWaitTicks(int ticks)
 int getEndWaitTicks()
 ```
