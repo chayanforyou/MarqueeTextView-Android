@@ -1,0 +1,83 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+group = "io.github.chayanforyou"
+version = "1.0.0"
+
+def localProperties = project.rootProject.file('local.properties')
+def prop = new Properties()
+
+if (localProperties.exists()) {
+    prop.load(localProperties.newDataInputStream())
+}
+
+tasks.register('androidSourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+    from android.sourceSets.main.kotlin.srcDirs
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "sonatype"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+
+            credentials {
+                username prop.getProperty('ossrhUsername')
+                password prop.getProperty('ossrhPassword')
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            afterEvaluate { project ->
+                from components.release
+
+                groupId = group.toString()
+                artifactId = 'marquee'
+                version = project.version as String
+            }
+
+            pom {
+                name = 'MarqueeTextView'
+                description = "A marquee view supporting both RTL and LTR."
+                url = 'https://github.com/chayanforyou/MarqueeTextView-Android'
+
+                scm {
+                    url = 'https://github.com/chayanforyou/MarqueeTextView-Android'
+                    connection = 'scm:git@github.com/chayanforyou/MarqueeTextView-Android.git'
+                    developerConnection = 'scm:git@github.com/chayanforyou/MarqueeTextView-Android.git'
+                }
+
+                licenses {
+                    license {
+                        name = 'Apache-2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'chayanforyou'
+                        name = 'Chayan Mistry'
+                        email = 'chayanmistrry@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+signing {
+    required { gradle.taskGraph.hasTask("publishing") }
+    useInMemoryPgpKeys(
+            prop.getProperty('signingKey'),
+            prop.getProperty('signingPassword')
+    )
+    sign publishing.publications
+}

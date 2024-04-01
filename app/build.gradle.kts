@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "io.github.chayanforyou.marqueeview"
-        minSdk = 21
+        minSdk = 14
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
