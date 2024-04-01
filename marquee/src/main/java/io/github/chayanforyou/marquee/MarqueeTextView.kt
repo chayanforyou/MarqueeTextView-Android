@@ -1,9 +1,9 @@
 package io.github.chayanforyou.marquee
 
 import android.content.Context
+import android.graphics.ColorFilter
 import android.graphics.Typeface
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -80,6 +80,12 @@ class MarqueeTextView : FrameLayout {
         get() = tvMain.textSize
         set(size) {
             tvMain.textSize = size
+        }
+
+    var typeface: Typeface?
+        get() = tvMain.typeface
+        set(typeface) {
+            tvMain.typeface = typeface
         }
 
     var fadeToColor: Int
