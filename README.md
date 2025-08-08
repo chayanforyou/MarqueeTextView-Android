@@ -6,7 +6,7 @@ Based on open source lib: https://github.com/shachar-oren/android-rtlmarqueeview
 
 ## Preview
 
-<img src="/app/src/main/res/drawable/preview_dark.gif" alt="preview_dark" width="50%"/>
+<img src="/app/src/main/res/drawable/preview_light.gif" alt="preview_light" width="50%"/>
 
 ## Integration
 
